@@ -1,12 +1,32 @@
 header {text-align: center;
-	font-family: courier;
+	font-family: sans-serif;
 	letter-spacing: 4px;
 	overflow: hidden;
 	position: fixed;
-	background-color: #FFFFFF;
+	background-color: #004E98;
 	width: 100%;
 	top: 0;
 	}
+nav { font-weight: bold;
+     background-color: #FF6700;
+     font-family: sans-serif;
+     text-align: center;
+     padding: 5px;
+     overflow: hidden;
+     position: fixed;
+     width: 100%;
+     margin-left: 50px;
+    }
+
+ul { text-align: center; list-style: none; line-height: 200%; }
+	nav a { text-decoration: none; }
+	
+	nav a:link { color: #000000 ; }
+
+	nav a:visited { color: #585858  ; }
+
+	nav a:hover { color: #E50000 ; }
+
 
 h1 {font-size: 50px;
     line-height: 200%;
@@ -14,6 +34,7 @@ h1 {font-size: 50px;
 
 body {padding-top: 150px;
       font-size: 20px;
+      background-color: #C0C0C0
       }
 
 h2 {line-height: 200%; 
@@ -38,46 +59,7 @@ ol {list-style-type: lower-roman;
 dd {font-style: italic;
     }
 
-.overlay {
-  height: 0%;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
-  overflow-y: scroll;
-  transition: 0.5s;
-}
 
-.overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 25%;
-}
-
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
-}
-
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
 
 @media screen and (max-height: 450px) {
   .overlay {overflow-y: scroll;}
