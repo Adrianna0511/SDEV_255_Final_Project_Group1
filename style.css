@@ -1,41 +1,61 @@
-header {text-align: center;
+.header-content {
 	font-family: sans-serif;
 	letter-spacing: 4px;
 	overflow: hidden;
-	position: fixed;
 	background-color: #004E98;
 	width: 100%;
-	top: 0;
-	}
-nav { font-weight: bold;
-     background-color: #FF6700;
-     font-family: sans-serif;
-     text-align: center;
-     padding: 5px;
-     overflow: hidden;
-     position: fixed;
-     width: 100%;
-     margin-left: 50px;
-    }
+}
+
+.navigation { font-weight: bold;
+  background-color: #FF6700;
+  font-family: sans-serif;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  padding: 5px;
+  margin-left: 8%;
+  margin-top: -10px;
+}
 
 ul { text-align: center; list-style: none; line-height: 200%; }
 	nav a { text-decoration: none; }
 	
-	nav a:link { color: #000000 ; }
+	nav a:link { color: #FFFFFF ; }
 
-	nav a:visited { color: #585858  ; }
+	nav a:visited { color: #FFFFFF  ; }
 
-	nav a:hover { color: #E50000 ; }
+	nav a:hover { color: #444444 ; }
 
 
-h1 {font-size: 50px;
-    line-height: 200%;
-    }
+h1 {font-size: 36pt;
+  color: #FFFFFF;
+  text-align: left;
+  padding-left: 5%;
+  float: left;
+}
 
-body {padding-top: 150px;
-      font-size: 20px;
-      background-color: #C0C0C0
-      }
+.log-in-button {
+  background-color: #3a6ea5;
+  color:#FFFFFF;
+  font-size: 16pt;
+  padding: 10px;
+  border-style: none;
+  float: right;
+  margin-right: 5%;
+  margin-top: 24pt;
+}
+
+body {
+  font-size: 20px;
+  background-color: #C0C0C0;
+  margin: 0;
+}
+
+main {
+  background-color: #ebebeb;
+  margin-left: 10%;
+  margin-right: 10%;
+}
 
 h2 {line-height: 200%; 
     font-size: 40px;
