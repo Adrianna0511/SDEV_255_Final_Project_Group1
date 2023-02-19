@@ -18,7 +18,10 @@ nav { font-weight: bold;
      margin-left: 50px;
     }
 
-ul { text-align: center; list-style: none; line-height: 200%; }
+ul { text-align: center;
+    list-style: none;
+    line-height: 200%;
+   }
 	nav a { text-decoration: none; }
 	
 	nav a:link { color: #000000 ; }
@@ -27,6 +30,12 @@ ul { text-align: center; list-style: none; line-height: 200%; }
 
 	nav a:hover { color: #E50000 ; }
 
+main { background-color: #FFFFFF;
+      margin-left: 50px;
+      padding-left: 2em;
+      padding-right: 2em;
+      overflow: auto;
+     }
 
 h1 {font-size: 50px;
     line-height: 200%;
@@ -49,27 +58,7 @@ h3 {font-size:30px;
 p {margin-left: 100px;
    margin-right: 100px;
    text-align: center;
-   }
-
-ol {list-style-type: lower-roman;
-    margin-left: 75px;
-    margin-right: 100px; 
-   }
-
-dd {font-style: italic;
-    }
-
-
-
-@media screen and (max-height: 450px) {
-  .overlay {overflow-y: scroll;}
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-  font-size: 40px;
-  top: 15px;
-  right: 35px;
   }
-}
 
 a {text-decoration: none;
    color: #000000;}
