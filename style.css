@@ -14,7 +14,7 @@ header {
   font-weight: bold;
   background-color: #FF6700;
   font-family: sans-serif;
-  font-size: 24px;
+  font-size: 18pt;
   text-align: left;
   width: 93%;
   padding: 10px 0 10px 0;
@@ -70,14 +70,16 @@ body {
   margin: 0;
 }
 
-main {
+main{
   background-color: #ebebeb;
   margin-left: 10%;
   margin-right: 10%;
 }
 
 .main-content {
-  padding: 5%
+  padding: 5%;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 h2 {
@@ -89,8 +91,7 @@ h3 {font-size:30px;
     text-align: center;
     } 
 
-p {margin-left: 100px;
-   margin-right: 100px;
+p {
    text-align: center;
    }
 
@@ -99,9 +100,23 @@ ol {list-style-type: lower-roman;
     margin-right: 100px; 
    }
 
-dd {font-style: italic;
-    }
+dd {
+  font-style: italic;
+}
 
+img {
+  float:right;
+  margin-right: 100px;
+  margin-top: 50px;
+  width: 25%;
+}
+
+footer {
+  background-color: #ebebeb;
+  font-size: 10pt;
+  margin: 20px 10% 20px 10%;
+  padding: 10px;
+}
 
 
 @media screen and (max-height: 450px) {
