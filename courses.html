@@ -1,52 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Final Project/Page Two</title>
-<meta charset="UTF-8">
 
-<style>
-	body {background-color: #d8bfd8;}
-</style>
-
-		<header>
-	  <link href="style.css" rel="stylesheet">
-<h1>Final Project</h1>
-<nav>
-  <a href="index.html">Home</a> &nbsp;
-    <a href="login.html">Log In</a> &nbsp;
-    <a href="courses.html">Courses</a> &nbsp;
-    <a href="page3.html">Page Three</a> &nbsp;
+  <head>
+    <title>View Courses | Course Caller</title>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <header>
+      <div class="header-content">
+        <h1 class="course-title">Course Caller</h1>
+        <button class="log-in-button">
+          <a href="login.html">Log In</a>
+        </button>
+      </div>
+      <nav class="navigation">
+        <a href="/index.html">Home</a>
+        <a href="/login.html">Log In</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/about.html">About Us</a>
+      </nav>
+    </header>
+    <main>
+      <div class="main-content"> 
+        <h2>View Courses</h2>
+        
+        <ul class="course-list">
+          <li>
+            <div class="course">
+              <p id="c-title">Generic Course Name</p>
+              <p id="c-description">This is a placeholder course to test HTML and CSS properties.</p>
+              <p id="c-subject">UHHH</p>
+              <p id="c-credits">3.0</p>
+              <!-- TODO: Buttons for signing up or editing courses -->
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
   
   
-</nav>
-	</header>
-
-	
-	<main>
-	<body>
-		<h2>Hello!</h2>
-			<p>I dont know what goes here yet</p><br>
-
-			<p>These are mostly just spacers for now.</p><br>
-
-			<p>Blah Blah Blah</p>
-
-<script>
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
-}
-
-function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
-}
-</script>
-
-
-
-</body>
-</main>
-		
-
-
-
-
+    <footer>
+      <p>
+        Copyright ©2023 Course Caller. All rights reserved.
+      </p>
+    </footer>
+  
+  </body>
 </html>
