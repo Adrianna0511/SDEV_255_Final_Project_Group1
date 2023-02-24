@@ -40,6 +40,18 @@ app.get("/about", (req, res) => {
     });
 });
 
+// Temporary until the database is complete
+app.get("/courses", (req, res) => {
+    res.render("courses", {
+        title: "Courses | Course Caller"
+    });
+});
+
+app.get("/login", (req, res) => {
+    res.render("login", {
+        title: "Log In | Course Caller"
+    });
+});
 
 // Blog routes (Replace with course routes when possible)
 app.get("/blogs", (req, res) => {
