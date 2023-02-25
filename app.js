@@ -25,7 +25,7 @@ app.use(express.static("public"));
 // Routes
 app.get("/", (req, res) => {
     res.render("index", {
-        title: "Home | Course Caller"
+        title: "Home"
     });
 });
 
@@ -35,22 +35,24 @@ app.use((req, res, next) => {
 });
 
 app.get("/about", (req, res) => {
+    console.log(req.params);
     res.render("about", {
-        title: "About Us | Course Caller"
+        title: "About Us"
     });
 });
 
 app.get("/login", (req, res) => {
     res.render("login", {
-        title: "Log In | Course Caller"
+        title: "Log In"
     });
 });
 
 // Course Routes
 app.get("/courses", (req, res) => {
+    console.log(req.params);
     Course.find().sort({courseID: -1})
         .then((result) => {
-            res.render("courses", {title: "Courses | Course Caller", courses: result})
+            res.render("courses", {title: "Courses", courses: result})
         })
         .catch((err) => {
             console.log(err);
@@ -58,7 +60,6 @@ app.get("/courses", (req, res) => {
 });
 
 app.post("/courses", (req, res) => {
-    console.log(req.body);
     const course = new Course(req.body);
 
     course.save()
@@ -74,15 +75,16 @@ app.post("/courses", (req, res) => {
 // The following pages are not complete yet
 app.get("/courses/create", (req, res) => {
     res.render("create", {
-        title: "Create New Course | Course Caller"
+        title: "Create New Course"
     });
 });
 
 app.get("/courses/courses/:id", (req, res) => {
+    console.log(req.params);
     const id = req.params.id;
     Course.findById(id)
         .then((result) => {
-            res.render("details", {course: result, title: "View Course | Course Caller"});
+            res.render("details", {course: result, title: "View Course"});
         })
         .catch((err) => {
             console.log(err);
