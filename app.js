@@ -79,6 +79,12 @@ app.get("/courses/create", (req, res) => {
     });
 });
 
+app.get("/courses/update", (req, res) => {
+    res.render("updateOne", {
+        title: "Update Course"
+     });
+});
+
 app.get("/courses/courses/:id", (req, res) => {
     console.log(req.params);
     const id = req.params.id;
