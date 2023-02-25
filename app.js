@@ -73,15 +73,15 @@ app.post("/courses", (req, res) => {
 // The following pages are not complete yet
 app.get("/courses/create", (req, res) => {
     res.render("create", {
-        title: "Create New Course"
+        title: "Create New Course | Course Caller"
     });
 });
 
-app.get("/courses/:id", (req, res) => {
+app.get("/courses/courses/:id", (req, res) => {
     const id = req.params.id;
     Course.findById(id)
         .then((result) => {
-            res.render("details", {course: result, title: "Course Details"});
+            res.render("details", {course: result, title: "View Course | Course Caller"});
         })
         .catch((err) => {
             console.log(err);
