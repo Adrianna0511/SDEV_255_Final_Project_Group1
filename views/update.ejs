@@ -24,8 +24,52 @@
         </div>
       </div>
     </main>
+
+    <script>
+    addEventListener("DOMContentLoaded", async function() {
+        document.querySelector("#updateBtn").addEventListener("click", updateCourse);
+     
+        // Load a course into the web form
+        const courseId = course.findByID (course);
+        const response = await fetch("/uri/courses/" + courseId);
+        if (response.ok) {
+           let song = await response.json();
+           document.querySelector("courseID").value = course.courseID;
+           document.querySelector("#courseTitle").value = course.courseTItle;
+           document.querySelector("#subject").value = course.subject;
+           document.querySelector("#description").value = course.description
+           document.querySelector("#credits").value = course.credits;
+        }
+     });
+     
+     async function updateCourse() {
+        // Create a course object from the form fields
+        const song = {
+           courseID: document.querySelector("#").value,
+           courseTitle: document.querySelector("#title").value,
+           subject: document.querySelector("#artist").value,
+           description: document.querySelector("#released").value,
+           credits: document.querySelector("#popularity").value
+        };
+             
+         // Send PUT request with JSON-encoded course to course URI
+        const response = await fetch("/api/songs", {
+           method: "PUT",
+           headers: { "Content-Type": "application/json" },
+           body: JSON.stringify(course)
+        });
+     
+        if (response.ok) {      
+           alert("Updated course.");
+        }
+        else {
+           document.querySelector("#error").innerHTML = "Cannot update course.";
+        }     
+     }
+     </script>
     
     <%- include("./partials/footer.ejs") %>
+
   </body>
   
   </html>
