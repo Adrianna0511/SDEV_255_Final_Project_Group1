@@ -19,18 +19,6 @@
                   <p id="c-title"><%= course.courseTitle %></p>
                   <p id="c-subject"><%= course.subject %></p>
                   <p id="c-credits">Credits: <%= course.credits %></p>
-                  <% if (course.length > 0) { %>
-                    <% course.forEach(course => { %>
-                      <a class="single" href="/courses/<%= course._id %>">
-                        <h3 class="courseTitle"><%= course.title %></h3>
-                        <p class="description"><%= course.description %></p>
-                        <p class="subject"><%=course.subject %</p>
-                        <p class="credits"><%=course.credits %></p>
-                      </a>
-                    <% }) %>
-                  <% } else { %>
-                    <p>There are no blogs to display...</p>
-                  <% } %>
                   <!-- TODO: Buttons for signing up or editing courses -->
                 </a>
               </div>

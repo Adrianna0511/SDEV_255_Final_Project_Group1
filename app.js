@@ -58,6 +58,7 @@ app.get("/courses", (req, res) => {
 });
 
 app.post("/courses", (req, res) => {
+    console.log(req.body);
     const course = new Course(req.body);
 
     course.save()
