@@ -57,6 +57,7 @@ nav a:hover { color: #444444 ; }
 }
 
 .log-in-button a {
+  text-decoration: none;
   color:#FFFFFF;
   font-size: 16pt;
   display: block;

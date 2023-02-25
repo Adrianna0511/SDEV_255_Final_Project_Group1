@@ -1,13 +1,13 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const Blog = require("./models/blog");
+const Course = require("./models/course");
 
 // Express app
 const app = express();
 
 // Connect to MongoDB database
-const dbURI = "mongodb+srv://[REDACTED]@nodetutorial.uyarppy.mongodb.net/nodetut?retryWrites=true&w=majority";
+const dbURI = "mongodb+srv://aheath44:FinalProject1@courses.qkd3m54.mongodb.net/test";
 mongoose.set("strictQuery", true);
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => app.listen(3000))
@@ -40,36 +40,29 @@ app.get("/about", (req, res) => {
     });
 });
 
-// Temporary until the database is complete
-app.get("/courses", (req, res) => {
-    res.render("courses", {
-        title: "Courses | Course Caller"
-    });
-});
-
 app.get("/login", (req, res) => {
     res.render("login", {
         title: "Log In | Course Caller"
     });
 });
 
-// Blog routes (Replace with course routes when possible)
-app.get("/blogs", (req, res) => {
-    Blog.find().sort({createdAt: -1})
+// Course Routes
+app.get("/courses", (req, res) => {
+    Course.find().sort({courseID: -1})
         .then((result) => {
-            res.render("index", {title: "All Blogs", blogs: result})
+            res.render("courses", {title: "Courses | Course Caller", courses: result})
         })
         .catch((err) => {
             console.log(err);
         });
 });
 
-app.post("/blogs", (req, res) => {
-    const blog = new Blog(req.body);
+app.post("/courses", (req, res) => {
+    const course = new Course(req.body);
 
-    blog.save()
+    course.save()
         .then((result) => {
-            res.redirect("/blogs");
+            res.redirect("/courses");
         })
         .catch((err) => {
             console.log(err);
@@ -77,28 +70,29 @@ app.post("/blogs", (req, res) => {
 
 });
 
-app.get("/blogs/create", (req, res) => {
+// The following pages are not complete yet
+app.get("/courses/create", (req, res) => {
     res.render("create", {
-        title: "Create New Blog"
+        title: "Create New Course"
     });
 });
 
-app.get("/blogs/:id", (req, res) => {
+app.get("/courses/:id", (req, res) => {
     const id = req.params.id;
-    Blog.findById(id)
+    Course.findById(id)
         .then((result) => {
-            res.render("details", {blog: result, title: "Blog Details"});
+            res.render("details", {course: result, title: "Course Details"});
         })
         .catch((err) => {
             console.log(err);
         });
 });
 
-app.delete("/blogs/:id", (req, res) => {
+app.delete("/courses/:id", (req, res) => {
     const id = req.params.id;
-    Blog.findByIdAndDelete(id)
+    Course.findByIdAndDelete(id)
     .then((result) => {
-        res.json({redirect: "/blogs"});
+        res.json({redirect: "/courses"});
     })
     .catch((err) => {
         console.log(err);
@@ -111,4 +105,4 @@ app.use((req, res) => {
     res.status(404).render("404", {
         title: "404 | Course Caller"
     });
-}); // Express method set to run on every request. Because it is at the bottom of the document, it will only run if nothing above it runs first.
+});
