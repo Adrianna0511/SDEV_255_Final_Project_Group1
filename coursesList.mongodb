@@ -1,0 +1,31 @@
+db.createCollection('courses')
+
+db.courses.insertMany([
+   { courseID: "ENGL 101", courseTitle:"Introductory English" , descrption:"An introductory course to college level English",subject:"English",credits:3 },
+   { courseID: "ENGL 105", courseTitle:"English Composition" , descrption:"A follow up course to ENGL 101. Develops students abilities to express ideas organized and effectively.",subject:"English",credits:3 },
+   { courseID: "ENGL 110", courseTitle:"Creative Writing" , descrption:"A follow up course to ENGL 101 or 105, teaches students how to more creatively express their thoughts and ideas through various methods of writing.",subject:"English",credits:3 },
+   { courseID: "BIOL 101", courseTitle:"Introductory Biology" , descrption:"An introductory course to college level Biology",subject:"Biology",credits:3 },
+   { courseID: "BIOL 105", courseTitle:"Human Biology"  , descrption:" A beginning course into the biology of the human organism and its functions.",subject:"Biology",credits:3 },
+   { courseID: "BIOL 110", courseTitle:"Microbiology I" , descrption:"A follow up course to BIOL 101. An overview of microorganisms and how they function.",subject:"Biology",credits:3 },
+   { courseID: "MATH 101", courseTitle:"Introduction to College Algebra" , descrption:"An introductory course to college level Algebra",subject:"Math",credits:3 },
+   { courseID: "MATH 105", courseTitle:"Finite Math" , descrption:" A follow up to MATH 101. Covers solving and graphing linear equations and inequalities and matrices.",subject:"Math",credits:3 },
+   { courseID: "MATH 110", courseTitle:"Trigonometry" , descrption:" A follow up to MATH 101 and   05, an in-depth study of triangle trigonometry, vectors and trigonometric function.",subject:"Math",credits:3 },
+   { courseID: "AGRI 101", courseTitle:"Introduction to Agriculture" , descrption:"An introductory course to agriculture",subject:"Agriculture",credits:3 },
+   { courseID: "AGRI 105", courseTitle:"Animal Science" , descrption:"A follow up course to AGRI 101. An introduction to animal science for agriculture including, livestock and breeds.",subject:"Agriculture",credits:3 },
+   { courseID: "AGRI 110", courseTitle:"Advanced Animal Science" , descrption:"A follow up course to AGRI 101 and 105. A more in-depth study of animal science and how animal life pertains to agriculture, and life at a cellular level.",subject:"Agriculture",credits:3 },
+   { courseID: "CSCI 101", courseTitle:"Introduction to Computer Science" , descrption:"Introduction to computer science",subject:"Computer Science",credits:3 },
+   { courseID: "CSCI 105", courseTitle:"Computer Science I" , descrption:" A follow up to CSCI 101. Object oriented computer programing using Java or C, covers object oriented concepts.",subject:"Computer Science",credits:3 },
+   { courseID: "CSCI 110", courseTitle:"Computer Science II" , descrption:"A follow up to CSCI 101 and 105, presents the theory and usage of database systems with a focus on SQL.",subject:"Computer Science",credits:3 },
+   { courseID: "ACCT 101", courseTitle:"Introduction to Accounting" , descrption:"The basics of financial accounting",subject:"Accounting",credits:3 },
+   { courseID: "ACCT 105", courseTitle:"Income Tax" , descrption:"A follow up to ACCT 101. This course is an overview of federal and state income tax laws, as well as introduces tax concepts.",subject:"Accounting",credits:3 },
+   { courseID: "ACCT 110", courseTitle:"Forensic Accounting" , descrption:" A follow up to ACCT 101 and 105. Introduces the principles, techniques and tools of forensic accounting.",subject:"Accounting",credits:3 },
+   { courseID: "CHEM 101", courseTitle:"Introduction to Chemistry" , descrption:"The introductory course to college level Chemistry",subject:"Chemistry",credits:3 },
+   { courseID: "CHEM 105", courseTitle:"Chemistry II" , descrption:"A follow up course to CHEM 101. Includes concepts of equilibrium, chemistry of metals and nonmetals, environmental chemistry and nuclear chemistry.",subject:"Chemistry",credits:3 },
+   { courseID: "CHEM 110", courseTitle:"Organic Chemistry" , descrption:"A follow up to CHEM 101 and 105. This course includes the properties, syntheses, and reactivity of aliphatic and aromatic compounds.",subject:"Chemistry",credits:3 },
+   { courseID: "CRIM 101", courseTitle:"Introduction to Criminal Justice" , descrption:"An introductory course to the criminal justice systems",subject:"Criminal Justice",credits:3 },
+   { courseID: "CRIM 105", courseTitle:"Victimology" , descrption:"A follow up course to CRIM 101. Covers the history of victimology and specific types of victimization in the criminal justice system.",subject:"Criminal Justice",credits:3 },
+   { courseID: "CRIM 110", courseTitle:"Introduction to Serial Killers" , descrption:"Introduction to serial killers. A follow up to CRIM 101. Examines serial murder through analysis of serial killers in the united states.",subject:"Criminal Justice",credits:3 }
+   
+]);
+
+db.courses.find();
