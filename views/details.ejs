@@ -11,7 +11,9 @@
       <p id="c-subject">Subject Area: <%= course.subject %></p>
       <p id="c-credits">Number of Credits: <%= course.credits %></p>
       <p id="c-description">Description of course: <%= course.description %></p>
-    <a class="delete" data-doc="<%= course._id %>">delete</a>
+    <a class="delete" data-doc="<%= course._id %>">
+        <p>Delete Course</p>
+    </a>
   </div>
 
   <%- include("./partials/footer.ejs") %>

@@ -8,24 +8,23 @@
     <main>
       <div class="main-content">
         <div class="create-course">
-          <form action="/courses" method="post">
+          <form action="/courses/<%= course._id%>" method="post">
             <label for="courseTitle">Course title:</label>
             <input type="text" id="courseTitle" name="courseTitle" required>
             <label for="courseID">Course ID:</label>
             <input type="text" id="courseID" name="courseID" required>
             <label for="subject">Course Subject:</label>
             <input type="text" id="subject" name="subject" required>
-            <label for="description">Course Description:</label>
             <label for="credits">Credits:</label>
             <input type="number" id="credits" name="credits" required>
+            <label for="description">Course Description:</label>
             <textarea id="description" name="description" required></textarea>
             <button>Submit</button>
           </form>
         </div>
       </div>
     </main>
-    
-    <%- include("./partials/footer.ejs") %>
-  </body>
-  
-  </html>
+  <%- include("./partials/footer.ejs") %>
+</body>
+
+</html>

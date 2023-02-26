@@ -50,6 +50,7 @@ app.get("/login", (req, res) => {
 // Course Routes
 app.get("/courses", (req, res) => {
     console.log(req.params);
+    console.log("Called /courses GET")
     Course.find().sort({courseID: -1})
         .then((result) => {
             res.render("courses", {title: "Courses", courses: result})
@@ -60,6 +61,7 @@ app.get("/courses", (req, res) => {
 });
 
 app.post("/courses", (req, res) => {
+    console.log("Called /courses POST");
     const course = new Course(req.body);
 
     course.save()
@@ -72,6 +74,18 @@ app.post("/courses", (req, res) => {
 
 });
 
+app.post("/courses/:id", (req, res) => {
+    const id = req.params.id;
+    const course = req.body;
+    Course.findByIdAndUpdate(id, course)
+    .then((result) => {
+        res.redirect("/courses/" + id);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+});
+
 // The following pages are not complete yet
 app.get("/courses/create", (req, res) => {
     res.render("create", {
@@ -79,13 +93,19 @@ app.get("/courses/create", (req, res) => {
     });
 });
 
-app.get("/courses/update", (req, res) => {
-    res.render("updateOne", {
-        title: "Update Course"
-     });
+app.get("/courses/update/:id", (req, res) => {
+    console.log(req.params);
+    const id = req.params.id;
+    Course.findById(id)
+        .then((result) => {
+            res.render("update", {course: result, title: "Edit Course"});
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 });
 
-app.get("/courses/courses/:id", (req, res) => {
+app.get("/courses/:id", (req, res) => {
     console.log(req.params);
     const id = req.params.id;
     Course.findById(id)
