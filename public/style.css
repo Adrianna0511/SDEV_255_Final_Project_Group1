@@ -24,14 +24,10 @@ header {
 
 
 .user-welcome {
-  background-color: #3a6ea5;
-  color: #FFFFFF;
-  font-size: 20pt;
-  border-style: none;
-  border-radius: 5px;
-  float: right;
-  margin-right: 5%;
-  margin-top: 26pt;
+  float:right;
+  text-align: right;
+  font-size: 12pt;
+  color: #ffffff;
 }
 
 
@@ -135,6 +131,15 @@ form input {
   display: block;
   width: 50%;
   margin: 10px 0;
+}
+
+form input[type="checkbox"] {
+  float: left;
+  margin: 10px 0;
+}
+
+form label[for="teacher"] {
+  text-align: left;
 }
 
 form textarea {
