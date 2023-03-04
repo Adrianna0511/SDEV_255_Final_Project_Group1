@@ -80,6 +80,7 @@ nav a:hover { color: #444444 ; }
 
 .edit-button {
   margin-top: 0;
+  margin-right: 3px;
   font-size: 10pt;
   font-weight: auto;
   padding: 2%;
