@@ -2,6 +2,10 @@ const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const Course = require("./models/course");
+const authRoutes = require('./routes/authRoutes');
+const cookieParser = require('cookie-parser');
+const { requireAuth, checkUser } = require('./middleware/authMiddleware');
+
 
 // Express app
 const app = express();
@@ -21,8 +25,11 @@ app.set("view engine", "ejs");
 app.use(morgan("dev"));
 app.use(express.urlencoded({extended: true}))
 app.use(express.static("public"));
+app.use(express.json());
+app.use(cookieParser());
 
 // Routes
+app.get('*', checkUser);
 app.get("/", (req, res) => {
     res.render("index", {
         title: "Home"
@@ -46,6 +53,14 @@ app.get("/login", (req, res) => {
         title: "Log In"
     });
 });
+
+app.get("/signup", (req, res) => {
+    res.render("signup", {
+        title: "Sign up"
+    });
+});
+
+app.use(authRoutes);
 
 // Course Routes
 app.get("/courses", (req, res) => {
@@ -87,13 +102,13 @@ app.post("/courses/:id", (req, res) => {
 });
 
 // The following pages are not complete yet
-app.get("/courses/create", (req, res) => {
+app.get("/courses/create", requireAuth, (req, res) => {
     res.render("create", {
         title: "Create New Course"
     });
 });
 
-app.get("/courses/update/:id", (req, res) => {
+app.get("/courses/update/:id", requireAuth, (req, res) => {
     console.log(req.params);
     const id = req.params.id;
     Course.findById(id)
@@ -117,7 +132,7 @@ app.get("/courses/:id", (req, res) => {
         });
 });
 
-app.delete("/courses/:id", (req, res) => {
+app.delete("/courses/:id", requireAuth, (req, res) => {
     const id = req.params.id;
     Course.findByIdAndDelete(id)
     .then((result) => {
@@ -135,3 +150,6 @@ app.use((req, res) => {
         title: "404 | Course Caller"
     });
 });
+
+
+

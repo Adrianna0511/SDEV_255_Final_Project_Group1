@@ -21,9 +21,9 @@
                   <p id="c-credits">Credits: <%= course.credits %></p>
                   <!-- TODO: Buttons for signing up or editing courses -->
                 </a>
-                <a class="single" href="/courses/update/<%= course._id%>">
-                  <p>Edit this Course</p>
-                </a>
+                <button class="edit-button">
+                <a href="/courses/update/<%= course._id%>">Edit this course</a>
+              </button>
               </div>
             <% }) %>
           <% } else { %>

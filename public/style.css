@@ -47,6 +47,25 @@ nav a:hover { color: #444444 ; }
   float: left;
 }
 
+button{
+  margin-top: 30px;
+  border-radius: 36px;
+  background: #3a6ea5;
+  border:0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+}
+
+.edit-button{
+  margin-left: 450px;
+  margin-right: 200px;
+  background: #3a6ea5;
+}
+
 .log-in-button {
   background-color: #3a6ea5;
   border-style: none;
@@ -116,6 +135,12 @@ form textarea {
   margin: 10px 0;
   padding: 15px 0px;
 }
+
+label{
+  display: block;
+  margin: 20px 0 10px;
+}
+
 
 img {
   float:right;
