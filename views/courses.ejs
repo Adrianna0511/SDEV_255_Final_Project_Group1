@@ -26,12 +26,14 @@
                     </div>
                   </a>
                 </div>
+                <% if (user) { %>
                 <div class="button-row">
-                  <!-- TODO: Buttons for signing up or editing courses -->
+                  <!-- TODO: Button for editing courses -->
                   <button class="edit-button button">
                     <a href="/courses/update/<%= course._id%>">Edit Course</a>
                   </button>
                 </div>
+                <% } %>
               </div>
             <% }) %>
           <% } else { %>

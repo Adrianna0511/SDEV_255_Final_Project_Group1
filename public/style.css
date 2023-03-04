@@ -6,6 +6,9 @@ header {
 
 .header-content {
 	font-family: 'Consolas';
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 	overflow: hidden;
 	background-color: #004E98;
 }
@@ -22,12 +25,17 @@ header {
   margin-top: -10px;
 }
 
-
 .user-welcome {
-  float:right;
+  background-color: #004E98;
   text-align: right;
-  font-size: 12pt;
+  overflow: hidden;
+}
+
+.user-welcome p {
+  text-align: right;
+  font-size: 10pt;
   color: #ffffff;
+  margin-right: 5%;
 }
 
 
@@ -44,14 +52,13 @@ nav a:hover { color: #444444 ; }
 
 
 .course-title {
-  font-size: 36pt;
+  font-size: 30pt;
   color: #FFFFFF;
   text-align: left;
   padding-left: 5%;
-  float: left;
 }
 
-.button{
+.button {
   margin-top: 30px;
   border-radius: 36px;
   background: #3a6ea5;
@@ -63,6 +70,12 @@ nav a:hover { color: #444444 ; }
   display: block;
   padding: 10px 16px;
   letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.delete {
+  background: #bb0000;
+  margin-left: 10%;
 }
 
 .edit-button {
@@ -81,9 +94,7 @@ nav a:hover { color: #444444 ; }
   background-color: #3a6ea5;
   border-style: none;
   border-radius: 5px;
-  float: right;
   margin-right: 5%;
-  margin-top: 24pt;
 }
 
 .log-in-button a {

@@ -21,10 +21,30 @@
             <textarea id="description" name="description" required></textarea>
             <button class="button">Submit</button>
           </form>
+          
+          <a class="delete" data-doc="<%= course._id %>">
+            <button class="button delete">Delete Course</button>
+          </a>
         </div>
       </div>
     </main>
   <%- include("./partials/footer.ejs") %>
+
+  <script>
+    const trashcan = document.querySelector('a.delete');
+
+    trashcan.addEventListener('click', (e) => {
+      const endpoint = `/courses/${trashcan.dataset.doc}`;
+
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect)
+      .catch(err => console.log(err));
+    });
+    
+  </script>
 </body>
 
 </html>

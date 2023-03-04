@@ -4,34 +4,19 @@
 <body>
   <%- include("./partials/header.ejs") %>
 
-  <div class="details content">
-    <main>
-      <p id="c-id"><%= course.courseID %></p>
-      <p id="c-title">Course: <%= course.courseTitle %></p>
-      <p id="c-subject">Subject Area: <%= course.subject %></p>
-      <p id="c-credits">Number of Credits: <%= course.credits %></p>
-      <p id="c-description">Description of course: <%= course.description %></p>
-    <a class="delete" data-doc="<%= course._id %>">
-        <p>Delete Course</p>
-    </a>
-  </div>
+  <main>
+    <div class="main-content">
+        <p id="c-id"><%= course.courseID %></p>
+        <p id="c-title">Course: <%= course.courseTitle %></p>
+        <p id="c-subject">Subject Area: <%= course.subject %></p>
+        <p id="c-credits">Number of Credits: <%= course.credits %></p>
+        <p id="c-description">Description of course: <%= course.description %></p>
+      <a class="add-course" data-doc="<%= course._id %>">
+        <button class="button">Add course</button>
+      </a>
+    </div>
+  </main>
 
   <%- include("./partials/footer.ejs") %>
-
-  <script>
-    const trashcan = document.querySelector('a.delete');
-
-    trashcan.addEventListener('click', (e) => {
-      const endpoint = `/courses/${trashcan.dataset.doc}`;
-
-      fetch(endpoint, {
-        method: 'DELETE',
-      })
-      .then(response => response.json())
-      .then(data => window.location.href = data.redirect)
-      .catch(err => console.log(err));
-    });
-    
-  </script>
 </body>
 </html>

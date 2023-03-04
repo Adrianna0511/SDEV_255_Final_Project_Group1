@@ -1,22 +1,24 @@
 <header>
-  <div class="header-content">
-    <h1 class="course-title">Course Caller</h1>
-      <% if (user) { %>
+  <% if (user) { %>
     <div class="user-welcome">
       <p>Signed in as: <%= user.email %></p>
     </div>
-    <button class="log-in-button">
+    <div class="header-content" style="margin-top: -14pt;">
+      <h1 class="course-title">Course Caller</h1>
+      <button class="log-in-button">
+        <a href="/logout">Log Out</a>
+      </button>
+    </div>
+    <nav class="navigation">
+      <a href="/">Home</a>
+      <a href="/courses">Courses</a>
+      <a href="/courses/create">Create Course</a>
+      <a href="/schedule">Schedule</a>
+      <a href="/about">About Us</a>
       <a href="/logout">Log Out</a>
-    </button>
-  </div>
-  <nav class="navigation">
-    <a href="/">Home</a>
-    <a href="/signup">Sign Up</a>
-    <a href="/courses">Courses</a>
-    <a href="/courses/create">Create Course</a>
-    <a href="/about">About Us</a>
-    <a href="/logout">Log Out</a>
-    <% } else { %>
+  <% } else { %>
+    <div class="header-content">
+      <h1 class="course-title">Course Caller</h1>
       <button class="log-in-button">
         <a href="/login">Log In</a>
       </button>
