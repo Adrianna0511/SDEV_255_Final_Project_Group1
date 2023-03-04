@@ -55,6 +55,7 @@ nav a:hover { color: #444444 ; }
   margin-top: 30px;
   border-radius: 36px;
   background: #3a6ea5;
+  color: #FFFFFF;
   border:0;
   text-transform: uppercase;
   font-weight: 700;
@@ -64,10 +65,16 @@ nav a:hover { color: #444444 ; }
   letter-spacing: 2px;
 }
 
-.edit-button{
-  margin-left: 450px;
-  margin-right: 200px;
-  background: #3a6ea5;
+.edit-button {
+  margin-top: 0;
+  font-size: 10pt;
+  font-weight: auto;
+  padding: 2%;
+}
+
+.edit-button a {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 .log-in-button {
@@ -87,6 +94,59 @@ nav a:hover { color: #444444 ; }
   padding: 10px;
 }
 
+.course {
+  display: flex;
+  align-self: center;
+  justify-content: stretch;
+  background-color: #C0C0C0;
+  border-style: solid;
+  margin: 2% 5%;
+}
+
+.course:hover {
+  box-shadow: 3px 3px 2px #777777;
+}
+
+.course-content {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  min-width: 80%;
+}
+
+.course-content a {
+  width: 100%;
+  text-decoration: none;
+}
+
+.course-content p {
+  display: inline;
+  text-align: left;
+}
+
+.title-row, .detail-row {
+  margin-left: 2%;
+}
+
+.title-row p {
+  color: #000000;
+  font-size: 16pt;
+  padding: 2% 0;
+}
+
+.detail-row p {
+  color:#444444;
+  font-size: 12pt;
+}
+
+.button-row {
+  display: flex;
+  align-self: center;
+  max-width: 20%;
+  padding: 1%;
+}
+
+
 body {
   font-size: 14pt;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -101,12 +161,7 @@ main {
 }
 
 .main-content {
-  padding: 5%
-}
-
-.main-content p {
-  margin-left: 100px;
-  margin-right: 100px;
+  padding: 5%;
 }
 
 h2 {
@@ -115,11 +170,11 @@ h2 {
 }
 
 h3 {font-size:30px;
-    text-align: center;
+  text-align: center;
 }
 
 p {
-   text-align: center;
+  text-align: center;
 }
 
 form {
@@ -134,7 +189,7 @@ form input {
 }
 
 form input[type="checkbox"] {
-  float: left;
+  width: auto;
   margin: 10px 0;
 }
 

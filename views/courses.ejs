@@ -14,16 +14,24 @@
           <% if (courses.length > 0) { %>
             <% courses.forEach(course => { %>
               <div class="course">
-                <a class="single" href="/courses/<%= course._id%>">
-                  <p id="c-id"><%= course.courseID %></p>
-                  <p id="c-title"><%= course.courseTitle %></p>
-                  <p id="c-subject"><%= course.subject %></p>
-                  <p id="c-credits">Credits: <%= course.credits %></p>
+                <div class="course-content">
+                  <a class="single" href="/courses/<%= course._id%>">
+                    <div class="title-row">
+                      <p><%= course.courseID %>:</p>
+                      <p><%= course.courseTitle %></p>
+                    </div>
+                    <div class="detail-row">
+                      <p>Subject: <%= course.subject %> | </p>
+                      <p>Credits: <%= course.credits %></p>
+                    </div>
+                  </a>
+                </div>
+                <div class="button-row">
                   <!-- TODO: Buttons for signing up or editing courses -->
-                </a>
-                <button class="edit-button">
-                <a href="/courses/update/<%= course._id%>">Edit this course</a>
-              </button>
+                  <button class="edit-button button">
+                    <a href="/courses/update/<%= course._id%>">Edit Course</a>
+                  </button>
+                </div>
               </div>
             <% }) %>
           <% } else { %>
