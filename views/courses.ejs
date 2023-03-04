@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 
 <%- include("./partials/head.ejs") %>
   
@@ -31,6 +30,11 @@
                   <button class="edit-button button">
                     <a href="/courses/update/<%= course._id%>">Edit Course</a>
                   </button>
+                  <form>
+                  <button class="edit-button button">
+                  <a href="/schedule">Add to Schedule</a>
+                  </button>
+                  </form>
                 </div>
               </div>
             <% }) %>
@@ -45,4 +49,3 @@
     <%- include("./partials/footer.ejs") %>
   
   </body>
-</html>

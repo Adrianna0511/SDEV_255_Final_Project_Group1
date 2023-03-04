@@ -54,6 +54,7 @@ app.get("/login", (req, res) => {
     });
 });
 
+
 app.get("/signup", (req, res) => {
     res.render("signup", {
         title: "Sign up"
@@ -61,6 +62,12 @@ app.get("/signup", (req, res) => {
 });
 
 app.use(authRoutes);
+
+app.get("/schedule", requireAuth,(req, res) => {
+    res.render("schedule", {
+        title: "Schedule"
+    });
+});
 
 // Course Routes
 app.get("/courses", (req, res) => {
