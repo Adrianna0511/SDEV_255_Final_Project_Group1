@@ -6,14 +6,21 @@
 
   <main>
     <div class="main-content">
-        <p id="c-id"><%= course.courseID %></p>
-        <p id="c-title">Course: <%= course.courseTitle %></p>
-        <p id="c-subject">Subject Area: <%= course.subject %></p>
-        <p id="c-credits">Number of Credits: <%= course.credits %></p>
-        <p id="c-description">Description of course: <%= course.description %></p>
-      <a class="add-course" data-doc="<%= course._id %>">
+      <div class="course-des">
+        <div class="c-title">
+          <p id="c-id"><%= course.courseID %></p>
+          <p id="c-title">|<%= course.courseTitle %></p>
+        </div>
+        <div class="course-sa">
+          <p id="c-subject">Subject Area: <%= course.subject %></p>
+          <p id="c-credits">|Number of Credits: <%= course.credits %></p>
+        </div>
+        <p id="c-description">Description of course:</p>
+        <p> <%= course.description %></p>
+      <a class="add-course button" data-doc="<%= course._id %>">
         <button class="button">Add course</button>
       </a>
+      </div>
     </div>
   </main>
 

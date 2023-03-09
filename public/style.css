@@ -136,6 +136,37 @@ nav a:hover { color: #444444 ; }
   text-align: left;
 }
 
+.c-title {
+  display: flex;
+  font-size: 30pt;
+  font-weight: bold;
+  margin-top: 3%;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-des {
+  background-color: #C0C0C0;
+  border-style: solid;
+  align-items: center;
+  font-size: 16pt;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.course-sa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-course {
+  margin-left: 42%;
+  margin-right: 44%;
+  padding: 0%;
+  margin-bottom: 3%;
+}
+
 .title-row, .detail-row {
   margin-left: 2%;
 }
