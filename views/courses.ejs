@@ -26,19 +26,19 @@
                   </a>
                 </div>
                 <% if (user) { %>
-                <div class="button-row">
-                  <% if (user.teacher) { %>
-                  <button class="edit-button button">
-                    <a href="/courses/update/<%= course._id%>">Edit Course</a>
-                  </button>
-                  <% } else { %>
-                  <form>
-                  <button class="edit-button button">
-                  <a href="/schedule">Add to Schedule</a>
-                  </button>
-                  </form>
-                  <% } %>
-                </div>
+                  <div class="button-row">
+                    <% if (user.teacher) { %>
+                      <button class="edit-button button">
+                        <a href="/courses/update/<%= course._id%>">Edit Course</a>
+                      </button>
+                    <% } else { %>
+                      <form>
+                      <button class="edit-button button">
+                      <a href="/schedule">Add to Schedule</a>
+                      </button>
+                      </form>
+                    <% } %>
+                  </div>
                 <% } %>
               </div>
             <% }) %>

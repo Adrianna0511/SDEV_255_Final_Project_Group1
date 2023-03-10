@@ -12,8 +12,11 @@
     <nav class="navigation">
       <a href="/">Home</a>
       <a href="/courses">Courses</a>
-      <a href="/courses/create">Create Course</a>
-      <a href="/schedule">Schedule</a>
+      <% if (user.teacher) { %>
+        <a href="/courses/create">Create Course</a>
+      <% } else { %>
+        <a href="/schedule">Schedule</a>
+      <% } %>
       <a href="/about">About Us</a>
       <a href="/logout">Log Out</a>
   <% } else { %>
