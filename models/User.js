@@ -18,7 +18,10 @@ const userSchema = new mongoose.Schema({
     teacher: {
         type: Boolean,
         default: false
-    }
+    },
+    courses: [{
+        courseId: String
+    }]
 });
 
 

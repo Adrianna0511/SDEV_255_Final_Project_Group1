@@ -82,6 +82,7 @@ app.get("/courses", (req, res) => {
         });
 });
 
+// Create new course
 app.post("/courses", (req, res) => {
     console.log("Called /courses POST");
     const course = new Course(req.body);
@@ -96,6 +97,7 @@ app.post("/courses", (req, res) => {
 
 });
 
+// Update existing course
 app.post("/courses/:id", (req, res) => {
     const id = req.params.id;
     const course = req.body;
@@ -108,7 +110,11 @@ app.post("/courses/:id", (req, res) => {
     });
 });
 
-// The following pages are not complete yet
+// Add a course to a user account
+app.put("/courses/:id", requireAuth, (req, res) => {
+    res.redirect("/courses/" + id); // Temporary, probably
+})
+
 app.get("/courses/create", requireAuth, (req, res) => {
     res.render("create", {
         title: "Create New Course"

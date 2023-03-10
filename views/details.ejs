@@ -18,14 +18,34 @@
         <p id="c-description">Description of course:</p>
         <p> <%= course.description %></p>
       <% if (user && user.teacher === false) { %>
+        <!-- Add another if statement to check if the user has this class in their schedule -->
         <a class="add-course button" data-doc="<%= course._id %>">
           <button class="button">Add course</button>
         </a>
+
       <% } %>
       </div>
     </div>
   </main>
-
   <%- include("./partials/footer.ejs") %>
+  <script>
+    const adder = document.querySelector('a.add-course');
+    const dropper = document.querySelector('a.drop-course');
+
+    adder.addEventListener('click', (e) => {
+      const endpoint = `/courses/${adder.dataset.doc}`;
+
+      // Add the course to the token
+      user.courses.push(adder.dataset.doc);
+      console.log(user.courses);
+
+      fetch(endpoint, {
+        method: 'PUT',
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect)
+      .catch(err => console.log(err));
+    });
+  </script>
 </body>
 </html>

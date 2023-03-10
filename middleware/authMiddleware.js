@@ -31,7 +31,7 @@ const checkUser = (req, res, next) => {
       } else {
         let user = await User.findById(decodedToken.id);
         res.locals.user = user;
-        console.log(user.teacher);
+        console.log(user.courses);
         next();
       }
     });
@@ -41,5 +41,10 @@ const checkUser = (req, res, next) => {
   }
 };
 
+// Add a course to a user
+const addCourse = (req, res, next) => {
 
-module.exports = { requireAuth, checkUser };
+};
+
+
+module.exports = { requireAuth, checkUser, addCourse };
