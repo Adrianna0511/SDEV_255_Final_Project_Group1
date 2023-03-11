@@ -189,6 +189,11 @@ nav a:hover { color: #444444 ; }
   padding: 1%;
 }
 
+.student-or-teacher {
+  display: flex;
+  width: 50%;
+}
+
 
 body {
   font-size: 14pt;

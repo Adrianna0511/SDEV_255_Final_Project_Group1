@@ -11,10 +11,12 @@
             <label for="password">Password</label>
             <input type="password" name="password" required/>
             <div class="password error"></div>
-            <label for="teacher">Student</label>
-            <input type="radio" name="teacher" value="false">
-            <label for="teacher">Teacher</label>
-            <input type="radio" name="teacher" value="true">
+            <div class="student-or-teacher">
+              <label for="teacher">Student</label>
+              <input type="radio" name="teacher" value="false">
+              <label for="teacher">Teacher</label>
+              <input type="radio" name="teacher" value="true">
+            </div>
             <button class="button">Sign up</button>
         </form>
         <p class="tip">Already have an account? <span><a href="/signup">Log in here</a></span></p>
