@@ -10,9 +10,7 @@
         
         <div class="course-list">
           <% if (user.courses.length > 0) { %>
-            <% courses.forEach(course => { 
-                console.log(course._id)
-                console.log(user.courses.courseId)%>
+            <% courses.forEach(course => { %>
               <% if (user.courses.includes('{ _id: new ObjectId("' + course._id + '") }')) { %>
                 <div class="course">
                   <div class="course-content">
