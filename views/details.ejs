@@ -20,7 +20,11 @@
       <% if (user && user.teacher === false) { %>
         <!-- Add another if statement to check if the user has this class in their schedule -->
         <a class="add-course button" data-doc="<%= course._id %>" data-student="<%= user %>">
-          <button class="button">Add course</button>
+          <% if (user.courses.includes('{ _id: new ObjectId("' + course._id + '") }')) { %>
+            <button class="button">Drop course</button>
+          <% } else { %>
+            <button class="button">Add course</button>
+          <% } %>
         </a>
 
       <% } %>

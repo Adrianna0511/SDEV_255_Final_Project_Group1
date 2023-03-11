@@ -44,19 +44,17 @@ const checkUser = (req, res, next) => {
 const addCourse = (req, res, next) => {
   const token = req.cookies.jwt;
   const id = req.params.id.toString();
-  console.log("Course ID: " + id); // temp
 
   // check json web token exists & is verified
   if (token) {
     jwt.verify(token, 'secret token message', async(err, decodedToken) => {
       let user = await User.findById(decodedToken.id);
-      console.log(user); // temp
-      if (isNaN(user.courses.indexOf(id))){
-        user.courses.push(id); // Add the course ID if it isn't in the array
+      if (user.courses.includes('{ _id: new ObjectId("' + id + '") }')){
+        let location = user.courses.indexOf('{ _id: new ObjectId("' + id + '") }');
+        user.courses.splice(location, 1); // Remove the course ID if it is in the array
       } else {
-        user.courses.splice(user.courses.indexOf(id), 1); // Remove the course ID if it is in the array
+        user.courses.push(id); // Add the course ID if it isn't in the array
       }
-      console.log("Schedule: " + user.courses); // temp
       User.findByIdAndUpdate(user.id, { courses: user.courses })
       .then((result) => {
         next();

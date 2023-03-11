@@ -52,9 +52,13 @@ app.get("/about", (req, res) => {
 app.use(authRoutes);
 
 app.get("/schedule", requireAuth,(req, res) => {
-    res.render("schedule", {
-        title: "Schedule"
-    });
+    Course.find().sort({courseID: -1})
+        .then((result) => {
+            res.render("schedule", {title: "Your Schedule", courses: result})
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 });
 
 // Course Routes
