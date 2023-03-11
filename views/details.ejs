@@ -19,7 +19,7 @@
         <p> <%= course.description %></p>
       <% if (user && user.teacher === false) { %>
         <!-- Add another if statement to check if the user has this class in their schedule -->
-        <a class="add-course button" data-doc="<%= course._id %>">
+        <a class="add-course button" data-doc="<%= course._id %>" data-student="<%= user %>">
           <button class="button">Add course</button>
         </a>
 
@@ -30,14 +30,12 @@
   <%- include("./partials/footer.ejs") %>
   <script>
     const adder = document.querySelector('a.add-course');
-    const dropper = document.querySelector('a.drop-course');
+    // We need to include 2 things in the request: Student user & course ID
 
     adder.addEventListener('click', (e) => {
       const endpoint = `/courses/${adder.dataset.doc}`;
 
       // Add the course to the token
-      user.courses.push(adder.dataset.doc);
-      console.log(user.courses);
 
       fetch(endpoint, {
         method: 'PUT',
