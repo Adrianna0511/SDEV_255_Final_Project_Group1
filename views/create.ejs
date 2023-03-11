@@ -7,21 +7,27 @@
   <%- include("./partials/header.ejs") %>
     <main>
       <div class="main-content">
-        <div class="create-course">
-          <form action="/courses" method="post">
-            <label for="courseTitle">Course title:</label>
-            <input type="text" id="courseTitle" name="courseTitle" required>
-            <label for="courseID">Course ID:</label>
-            <input type="text" id="courseID" name="courseID" required>
-            <label for="subject">Course Subject:</label>
-            <input type="text" id="subject" name="subject" required>
-            <label for="credits">Credits:</label>
-            <input type="number" id="credits" name="credits" required>
-            <label for="description">Course Description:</label>
-            <textarea id="description" name="description" required></textarea>
-            <button class="button">Submit</button>
-          </form>
-        </div>
+        <% if (user.teacher) { %>
+          <div class="create-course">
+            <form action="/courses" method="post">
+              <label for="courseTitle">Course title:</label>
+              <input type="text" id="courseTitle" name="courseTitle" required>
+              <label for="courseID">Course ID:</label>
+              <input type="text" id="courseID" name="courseID" required>
+              <label for="subject">Course Subject:</label>
+              <input type="text" id="subject" name="subject" required>
+              <label for="credits">Credits:</label>
+              <input type="number" id="credits" name="credits" required>
+              <label for="description">Course Description:</label>
+              <textarea id="description" name="description" required></textarea>
+              <button class="button">Submit</button>
+            </form>
+          </div>
+        <% } else { %>
+          <p>
+            This content isn't available right now.
+          </p>
+        <% } %>
       </div>
     </main>
   <%- include("./partials/footer.ejs") %>
